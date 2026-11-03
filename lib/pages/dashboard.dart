@@ -3,7 +3,6 @@ import 'package:demopcpsseca/core/static.dart';
 import 'package:demopcpsseca/model/news.dart';
 import 'package:demopcpsseca/pages/detailpage.dart';
 import 'package:flutter/material.dart';
-import 'package:smart_date_formatter/smart_date_formatter.dart';
 
 
 class dashboard extends StatefulWidget {
@@ -15,7 +14,7 @@ class dashboard extends StatefulWidget {
 
 class dashboardState extends State<dashboard> {
 
-  horizontalitem(size, String title, url, date,
+  GestureDetector horizontalitem(size, String title, url, date,
       Articles art){
     var formatdate = Static.datetimeconverter(date);
     date = formatdate;
@@ -61,13 +60,13 @@ class dashboardState extends State<dashboard> {
             ),
           ),
           Positioned( bottom: 40,left: 30,
-              child: Container(width: size.width/2,
+              child: SizedBox(width: size.width/2,
                   child: Text(title,
                     overflow: TextOverflow.ellipsis,maxLines: 2,
                     style: TextStyle(color: Colors.white),)
               )),
           Positioned( bottom: 20,left: 30,
-              child: Container(width: size.width/2,
+              child: SizedBox(width: size.width/2,
                   child: Text(date,
                     overflow: TextOverflow.ellipsis,maxLines: 1,
                     style: TextStyle(color: Colors.white),)
@@ -81,7 +80,7 @@ class dashboardState extends State<dashboard> {
     );
   }
 
-  static verticalllistitem(
+  static GestureDetector verticalllistitem(
       context,size,String title, url,date,source,
       Articles? art){
     var formatdate = Static.datetimeconverter(date);
@@ -117,7 +116,7 @@ class dashboardState extends State<dashboard> {
                         url),
                   ),
                 ),
-                Container(
+                SizedBox(
                   height: 150,
                   width: 150,
                   child: Center(
@@ -193,7 +192,7 @@ class dashboardState extends State<dashboard> {
                           var data = snapshot.data;
                           return Column(
                             children: [
-                              Container(
+                              SizedBox(
                                 height: size.height/4.5,
                                 child: ListView.builder(
                                     padding: EdgeInsets.zero,
@@ -209,7 +208,7 @@ class dashboardState extends State<dashboard> {
                                     }
                                 ),
                               ),
-                              Container(
+                              SizedBox(
                                 height: size.height/1.6,
                                 child: ListView.builder(
                                     padding: EdgeInsets.zero,

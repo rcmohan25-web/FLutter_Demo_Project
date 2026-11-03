@@ -3,13 +3,12 @@ import 'package:demopcpsseca/core/static.dart';
 import 'package:demopcpsseca/model/news.dart';
 import 'package:flutter/material.dart';
 import 'dashboard.dart';
-import 'package:smart_date_formatter/smart_date_formatter.dart';
 import 'package:share_plus/share_plus.dart';
 
 
 
 class detailpage extends StatefulWidget {
-   detailpage({super.key});
+   const detailpage({super.key});
 
   @override
   State<detailpage> createState() => detailpageState();
@@ -37,7 +36,7 @@ class detailpageState extends State<detailpage> {
             SizedBox(height: 55,),
             Stack(
               children: [
-                Container(
+                SizedBox(
                   height: size.height/4,
                   width: size.width,
                 child: Image.network(fit: BoxFit.cover
@@ -65,9 +64,7 @@ class detailpageState extends State<detailpage> {
                       SharePlus.instance.share(
                           ShareParams(
                             text:
-                            Static.article!.title! +
-                                " " +
-                                Static.article!.url!,
+                            "${Static.article!.title!} ${Static.article!.url!}",
                           ));
                     },
                     child: Padding(
@@ -77,7 +74,7 @@ class detailpageState extends State<detailpage> {
                     ),
                   ),
                 ),
-                Container(
+                SizedBox(
                   height: size.height/4,
                   child: Center(
                     child: Icon(Icons.play_circle_fill,
@@ -129,7 +126,7 @@ class detailpageState extends State<detailpage> {
                         return Column(
                           children: [
 
-                            Container(
+                            SizedBox(
                               height: size.height/1.6,
                               child: ListView.builder(
                                   padding: EdgeInsets.zero,

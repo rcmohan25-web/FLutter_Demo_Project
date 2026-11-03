@@ -15,7 +15,7 @@ class Static {
   static Articles? article;
 
   //datetime formatter
-static datetimeconverter (String value) {
+static String datetimeconverter (String value) {
   if (value.isEmpty || value == "" || value == " ") {
     return "";
   }
